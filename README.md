@@ -1,0 +1,2 @@
+# DataProcess
+將透過DataMining爬取下來的資料處理成能夠進行統計分析與機器學習實做的格式
