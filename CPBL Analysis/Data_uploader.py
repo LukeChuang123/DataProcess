@@ -17,7 +17,7 @@ class DataUploader:
         print("temp")
         print(temp_df) 
         # print("temp index",temp_df.index)
-        temp_df.to_excel('temp.xlsx',sheet_name='biubiu')
+        # temp_df.to_excel('temp.xlsx',sheet_name='biubiu')
         # input("continue")
         return temp_df
 
