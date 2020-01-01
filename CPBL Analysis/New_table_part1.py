@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 from sqlalchemy import create_engine
 
-import re
-
 import Data_uploader
 
 # MySQL的使用者：root, 密碼:147369, 埠：3306,資料庫：mydb
@@ -105,7 +103,7 @@ print(final_table)
 final_df = final_df.reset_index().drop("index",axis=1)
 print(final_df)
 final_table = final_table.join(final_df)
-final_table = pd.concat([final_table,team_stadium_dummy_df],axis=1).drop(["HOST","CLIENT","STADIUM"],axis=1)
+final_table = pd.concat([final_table,team_stadium_dummy_df],axis=1).drop(["HOST","CLIENT"],axis=1)
 print(final_table)
 
 
