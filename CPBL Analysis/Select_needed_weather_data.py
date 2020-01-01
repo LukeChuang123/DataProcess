@@ -47,6 +47,7 @@ for station_data_index in range(stadium_station_df.shape[0]):
     # print(weather_station_df["DATE"])
     needed_weather_data = weather_station_df[(weather_station_df["DATE"]<=end_date) & (weather_station_df["DATE"]>=start_date)]
     needed_weather_data = needed_weather_data.groupby("DATE").mean().round(2)
+    needed_weather_data.insert(0,"STATION",station)
     print(needed_weather_data)
     if(is_first_time):
         weather_data_df = needed_weather_data
