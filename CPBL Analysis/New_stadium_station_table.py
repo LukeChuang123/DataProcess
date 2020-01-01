@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import numpy as np
-from sqlalchemy import create_engine
 import datetime
-
-import Data_uploader
 
 def get_station_start_and_end_dates(station):
     station_start_date = datetime.datetime.strptime(str(station["資料起始日期"][0]), "%Y-%m-%d").date() 
