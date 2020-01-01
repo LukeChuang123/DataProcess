@@ -29,23 +29,8 @@ def decide_start_and_end_dates(station):
         elif(station_start_date <= start_date and station_end_date < end_date):
             start_date = station_end_date
 
-# MySQL的使用者：root, 密碼:147369, 埠：3306,資料庫：mydb
-engine = create_engine('mysql+pymysql://root:Lc-20332895-@localhost:3306/'+"cpbl_whole_data")
-conn = engine.connect()
-# 查詢語句，選出employee表中的所有資料
-sql = '''
-select * from weather_bureau_data;
-'''
-# read_sql_query的兩個引數: sql語句， 資料庫連線
-# weather_table = pd.read_sql_query(sql, engine)
-
 #read temp file to dataframe
 temp_df = pd.read_excel("temp.xlsx")
-print(temp_df)
-
-#加入星期的dummy coding
-day_dummy_df = pd.get_dummies(temp_df["DAY"]).reset_index()
-temp_df = pd.concat([temp_df.drop("DAY",axis=1),day_dummy_df.drop("index",axis=1)],axis=1)
 print(temp_df)
 
 #read 各球場對應觀測站 file to dataframe
@@ -106,11 +91,3 @@ for stadium in stadium_and_station.index:
         end_date = datetime.datetime.strptime("2019-10-17", "%Y-%m-%d").date()
 print(stadium_station_df)
 stadium_station_df.to_excel("temp2.xlsx")
-
-
-
-
-
-
-
-
