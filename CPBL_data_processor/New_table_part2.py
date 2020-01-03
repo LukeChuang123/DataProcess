@@ -84,6 +84,6 @@ for index in range(temp_df.shape[0]):
     print(temp_df.iloc[index]["TIME"])
     temp_df.iloc[index,11] = convert_to_minutes(temp_df.iloc[index]["TIME"])
     print(temp_df.iloc[index]["TIME"])
-
+    
 print(temp_df)
 temp_df.to_excel("temp3.xlsx")
